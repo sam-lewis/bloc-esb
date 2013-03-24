@@ -1,0 +1,40 @@
+<assembly>
+
+    <id>bin</id>
+
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <fileSets>
+        <!-- Expanded Karaf Standard Distribution -->
+        <fileSet>
+            <directory>target/dependencies/apache-karaf-${karaf.version}</directory>
+            <outputDirectory>/</outputDirectory>
+            <excludes>
+                <exclude>**/demos/**</exclude>
+                <exclude>LICENSE</exclude>
+                <exclude>NOTICE</exclude>
+                <exclude>README</exclude>
+                <exclude>RELEASE-NOTES</exclude>
+                <exclude>karaf-manual*.html</exclude>
+                <exclude>karaf-manual*.pdf</exclude>
+                <exclude>etc/custom.properties</exclude>
+            </excludes>
+        </fileSet>
+
+        <fileSet>
+            <directory>target/classes</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>target/dependencies</directory>
+            <includes>
+                <include>branding.jar</include>
+            </includes>
+            <outputDirectory>/lib/</outputDirectory>
+        </fileSet>
+    </fileSets>
+
+</assembly>
